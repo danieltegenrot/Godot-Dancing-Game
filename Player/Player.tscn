@@ -1,0 +1,248 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Vector Graphics/Arm.png" type="Texture" id=1]
+[ext_resource path="res://Vector Graphics/Hand.png" type="Texture" id=2]
+[ext_resource path="res://Vector Graphics/Lower leg.png" type="Texture" id=3]
+[ext_resource path="res://Vector Graphics/Leg.png" type="Texture" id=4]
+[ext_resource path="res://Vector Graphics/Under arm.png" type="Texture" id=5]
+[ext_resource path="res://Vector Graphics/Torso.png" type="Texture" id=6]
+[ext_resource path="res://Vector Graphics/Head.png" type="Texture" id=7]
+[ext_resource path="res://Player/Player.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 31.8181 )
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Head" type="RigidBody2D" parent="."]
+gravity_scale = -5.0
+
+[node name="Sprite" type="Sprite" parent="Head"]
+position = Vector2( 1.19209e-07, -2.38419e-07 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+shape = SubResource( 1 )
+
+[node name="Torso" type="RigidBody2D" parent="."]
+position = Vector2( 0, 76 )
+gravity_scale = -5.0
+
+[node name="Sprite" type="Sprite" parent="Torso"]
+position = Vector2( 1.19209e-07, -2.38419e-07 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso"]
+scale = Vector2( 1, 1.36 )
+shape = SubResource( 1 )
+
+[node name="LeftArm" type="RigidBody2D" parent="."]
+position = Vector2( 28, 48 )
+
+[node name="Sprite" type="Sprite" parent="LeftArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.226551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="RightArm" type="RigidBody2D" parent="."]
+position = Vector2( -28, 48 )
+
+[node name="Sprite" type="Sprite" parent="RightArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.226551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="LeftUnderArm" type="RigidBody2D" parent="."]
+position = Vector2( 28, 92 )
+scale = Vector2( 1.12, 1 )
+
+[node name="Sprite" type="Sprite" parent="LeftUnderArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.516528, 0.630263 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftUnderArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.208211, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="RightUnderArm" type="RigidBody2D" parent="."]
+position = Vector2( -28, 92 )
+
+[node name="Sprite" type="Sprite" parent="RightUnderArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightUnderArm"]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.226551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="RightLeg" type="RigidBody2D" parent="."]
+position = Vector2( -16, 156 )
+
+[node name="Sprite" type="Sprite" parent="RightLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.306551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="RightUnderLeg" type="RigidBody2D" parent="."]
+position = Vector2( -16, 204 )
+gravity_scale = 10.0
+
+[node name="Sprite" type="Sprite" parent="RightUnderLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightUnderLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.306551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="LeftUnderLeg" type="RigidBody2D" parent="."]
+position = Vector2( 12, 204 )
+gravity_scale = 10.0
+
+[node name="Sprite" type="Sprite" parent="LeftUnderLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftUnderLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.306551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="LeftLeg" type="RigidBody2D" parent="."]
+position = Vector2( 12, 156 )
+
+[node name="Sprite" type="Sprite" parent="LeftLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLeg"]
+position = Vector2( 0, -20 )
+scale = Vector2( 0.306551, 0.880002 )
+shape = SubResource( 1 )
+
+[node name="RightHand" type="RigidBody2D" parent="."]
+position = Vector2( -28, 140 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 5.0
+
+[node name="Sprite" type="Sprite" parent="RightHand"]
+position = Vector2( 0, 4 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightHand"]
+position = Vector2( 0, 4 )
+scale = Vector2( 0.229338, 0.185592 )
+shape = SubResource( 1 )
+
+[node name="LeftHand" type="RigidBody2D" parent="."]
+position = Vector2( 28, 140 )
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 5.0
+
+[node name="Sprite" type="Sprite" parent="LeftHand"]
+position = Vector2( 0, 4 )
+scale = Vector2( 0.586538, 0.630263 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHand"]
+position = Vector2( 0, 4 )
+scale = Vector2( 0.229338, 0.185592 )
+shape = SubResource( 1 )
+
+[node name="HeadJoint" type="PinJoint2D" parent="."]
+position = Vector2( 0, 32 )
+node_a = NodePath("../Head")
+node_b = NodePath("../Torso")
+bias = 0.9
+softness = 4.0
+
+[node name="LeftArmJoint" type="PinJoint2D" parent="."]
+position = Vector2( 28, 48 )
+node_a = NodePath("../Torso")
+node_b = NodePath("../LeftArm")
+bias = 0.9
+
+[node name="RightArmJoint" type="PinJoint2D" parent="."]
+position = Vector2( -28, 48 )
+node_a = NodePath("../Torso")
+node_b = NodePath("../RightArm")
+bias = 0.9
+
+[node name="RightUnderArmJoint" type="PinJoint2D" parent="."]
+position = Vector2( -28, 92 )
+node_a = NodePath("../RightArm")
+node_b = NodePath("../RightUnderArm")
+bias = 0.9
+
+[node name="LeftUnderArmJoint" type="PinJoint2D" parent="."]
+position = Vector2( 28, 92 )
+node_a = NodePath("../LeftArm")
+node_b = NodePath("../LeftUnderArm")
+bias = 0.9
+
+[node name="LeftHandJoint" type="PinJoint2D" parent="."]
+position = Vector2( 28, 140 )
+node_a = NodePath("../LeftUnderArm")
+node_b = NodePath("../LeftHand")
+bias = 0.9
+softness = 2.0
+
+[node name="RightHandJoint" type="PinJoint2D" parent="."]
+position = Vector2( -28, 140 )
+node_a = NodePath("../RightUnderArm")
+node_b = NodePath("../RightHand")
+bias = 0.9
+softness = 2.0
+
+[node name="LeftLegJoint" type="PinJoint2D" parent="."]
+position = Vector2( 12, 116 )
+node_a = NodePath("../Torso")
+node_b = NodePath("../LeftLeg")
+bias = 0.9
+
+[node name="RightLegJoint" type="PinJoint2D" parent="."]
+position = Vector2( -16, 116 )
+node_a = NodePath("../Torso")
+node_b = NodePath("../RightLeg")
+bias = 0.9
+
+[node name="RightUnderLegJoint" type="PinJoint2D" parent="."]
+position = Vector2( -16, 164 )
+node_a = NodePath("../RightLeg")
+node_b = NodePath("../RightUnderLeg")
+bias = 0.9
+
+[node name="LeftUnderLegJoint" type="PinJoint2D" parent="."]
+position = Vector2( 12, 164 )
+node_a = NodePath("../LeftLeg")
+node_b = NodePath("../LeftUnderLeg")
+bias = 0.9
